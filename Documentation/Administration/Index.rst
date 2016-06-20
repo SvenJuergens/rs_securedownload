@@ -10,7 +10,6 @@ Administration
 ==============
 
 The extension has "only" two configuration vars.
-
 Both can be found in the extension manager.
 
 |img-10|

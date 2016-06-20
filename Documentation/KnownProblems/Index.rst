@@ -8,5 +8,5 @@
 Known problems
 ==============
 
-Please report\/follow any found bug or feature requests on the forge bugtracker of this extension
-	https://forge.typo3.org/projects/extension-rs_securedownload/issues
+Please report\/follow any found bug or feature requests on the bugtracker of this extension
+	https://github.com/rs-softweb/TYPO3-rs_securedownload/issues
