@@ -48,7 +48,7 @@
 			<label index="csv-download_datetime">Y-m-d_H-i</label>
 		</languageKey>
 		<languageKey index="de" type="array">
-			<label index="title">Sicherer Downloads</label>
+			<label index="title">Sichere Downloads</label>
 			<label index="function1">Kennw&#246;rter &#220;berblick</label>
 			<label index="function2">Kennw&#246;rter FALSCH</label>
 			<label index="function3">Kennw&#246;rter RICHTIG</label>
@@ -60,11 +60,11 @@
 			<label index="download-yet-wrong">Download Versuche mit falschem Kennwort</label>
 			<label index="download-yet-correct">Downloads mit richtigem Kennwort</label>
 			<label index="no-ip-logging">IP Speicherung war bei Zugriff deaktiviert</label>
-<!-- Aendern Sie nicht diese Zeilen - ANFANG -->
+<!-- Aendern Sie diese Zeilen nicht - ANFANG -->
 			<label index="error1">Dieser Code existiert nicht: &quot;%s&quot;</label>
 			<label index="error2">Dieser Code ist abgelaufen oder noch nicht g&#252;ltig!</label>
 			<label index="error3">Dieser Code wurde deaktiviert!</label>
-<!-- Aendern Sie nicht diese Zeilen - ENDE -->
+<!-- Aendern Sie diese Zeilen nicht - ENDE -->
 			<label index="please_select_page">Bitte w&#228;hlen Sie im Seitenbaum eine Seite mit Sicheren Downloads aus.</label>
 			<label index="table_title">Titel</label>
 			<label index="table_entry">Eintrag</label>
