@@ -16,7 +16,6 @@
  *
  *  The GNU General Public License can be found at
  *  http://www.gnu.org/copyleft/gpl.html.
- *  A copy is found in the textfile GPL.txt distributed with these scripts.
  *
  *
  *  This script is distributed in the hope that it will be useful,
