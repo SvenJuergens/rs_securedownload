@@ -77,14 +77,14 @@ class  tx_rssecuredownload_module1 extends t3lib_SCbase {
 		// check, if we should render a csv-table
 		$this->csvOutput = (t3lib_div::_GET('format') == 'csv') ? TRUE : FALSE;
 		// get the code for csv-table output
-		$this->csvOutputCode = t3lib_div::_GET('code');
+		$this->csvOutputCode = (int)t3lib_div::_GET('code');
 		// get the type for csv-table output (0=all, 1=failure, 2=correct) )
 		$this->csvOutputType = t3lib_div::_GET('type');
 
 		// check, if we should delete rows
 		$this->delete = (t3lib_div::_GET('delete') == '1') ? TRUE : FALSE;
 		// get the code for delete
-		$this->deleteCode = t3lib_div::_GET('code');
+		$this->deleteCode = (int)t3lib_div::_GET('code');
 		// get the type for delete (0=all, 1=failure, 2=correct, 3=single) )
 		$this->deleteType = t3lib_div::_GET('type');
 	}
