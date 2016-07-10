@@ -102,7 +102,7 @@ class tx_rssecuredownload_pi1 extends tslib_pibase {
 
 		if (($this->piVars['senderuid'] == $uid) && ($this->piVars['action'] != '')) {
 			$action = $this->piVars['action'];
-			$givenCode = $this->piVars['code'];
+			$givenCode = htmlspecialchars($this->piVars['code']);
 		} else {
 			$action = 'getCode';
 		}
@@ -255,7 +255,7 @@ class tx_rssecuredownload_pi1 extends tslib_pibase {
 	private function UserDataArray() {
 		$result = array();
 		$result['accesstime'] = date('U');
-		$result['rbrowser']   = $_SERVER['HTTP_USER_AGENT'];
+		$result['rbrowser']   = htmlspecialchars($_SERVER['HTTP_USER_AGENT']);
 		if ($this->extConf['enableIpLogging'] == 1) {
 			$result['ripadress'] = $_SERVER['REMOTE_ADDR'];
 		} else {

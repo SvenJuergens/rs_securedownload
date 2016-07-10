@@ -381,7 +381,7 @@ class  tx_rssecuredownload_module1 extends t3lib_SCbase {
 									} else {
 										$content .= sprintf($tableline_download1, $brd_full, 5, $i_logs, $brd_dot, $color, $lang->getLL('table_datetime'), $brd_dot, $color, date($lang->getLL('table_datetime_format'), $logs_result['accesstime']), $brd_full, 5, $link_delete);
 									}
-									$content .= sprintf($tableline_download2, $color, $brd_dot, $lang->getLL('table_r_browser'), $brd_dot, $logs_result['rbrowser']);
+									$content .= sprintf($tableline_download2, $color, $brd_dot, $lang->getLL('table_r_browser'), $brd_dot, htmlspecialchars($logs_result['rbrowser'], NULL, NULL, FALSE));
 									if ($logs_result['ripadress'] <> '') {
 										$content .= sprintf($tableline_download2, $color, $brd_dot, $lang->getLL('table_r_ipadress'), $brd_dot, $logs_result['ripadress']);
 									} else {
@@ -393,9 +393,9 @@ class  tx_rssecuredownload_module1 extends t3lib_SCbase {
 										$content .= sprintf($tableline_download2, $color, $brd_dot, $lang->getLL('table_r_name'), $brd_dot, '!! <span style="font-style:italic;">'.$lang->getLL('no-ip-logging').'</span> !!');
 									}
 									if ($i_logs < $count_logs) {
-										$content .= sprintf($tableline_download2, $color, $brd_dot, $lang->getLL('table_errortext'), $brd_dot, sprintf($lang->getLL('error'.$logs_result['error']), $logs_result['errortext']));
+										$content .= sprintf($tableline_download2, $color, $brd_dot, $lang->getLL('table_errortext'), $brd_dot, sprintf($lang->getLL('error'.$logs_result['error']), htmlspecialchars($logs_result['errortext'], NULL, NULL, FALSE)));
 									} else {
-										$content .= sprintf($tableline_download2, $color, $brd_full, $lang->getLL('table_errortext'), $brd_full, sprintf($lang->getLL('error'.$logs_result['error']), $logs_result['errortext']));
+										$content .= sprintf($tableline_download2, $color, $brd_full, $lang->getLL('table_errortext'), $brd_full, sprintf($lang->getLL('error'.$logs_result['error']), htmlspecialchars($logs_result['errortext'], NULL, NULL, FALSE)));
 									}
 								}
 							} else {
@@ -469,7 +469,7 @@ class  tx_rssecuredownload_module1 extends t3lib_SCbase {
 										$content .= sprintf($tableline_download1, $brd_full, 4, $i_logs, $brd_dot, $color, $lang->getLL('table_datetime'), $brd_dot, $color, 
 											date($lang->getLL('table_datetime_format'), $logs_result['accesstime']), $brd_full, 4, $link_delete);
 									};
-									$content .= sprintf($tableline_download2, $color, $brd_dot, $lang->getLL('table_r_browser'), $brd_dot, $logs_result['rbrowser']);
+									$content .= sprintf($tableline_download2, $color, $brd_dot, $lang->getLL('table_r_browser'), $brd_dot, htmlspecialchars($logs_result['rbrowser'], NULL, NULL, FALSE));
 									if ($logs_result['ripadress'] <> '') {
 										$content .= sprintf($tableline_download2, $color, $brd_dot, $lang->getLL('table_r_ipadress'), $brd_dot, $logs_result['ripadress']);
 									} else {
@@ -559,7 +559,7 @@ class  tx_rssecuredownload_module1 extends t3lib_SCbase {
 
 		while ($row = $db->sql_fetch_assoc($logs_query)) {
 			$row['accesstime'] = date($lang->getLL('table_datetime_format'), $row['accesstime']);
-			$row['rbrowser'] = $row['rbrowser'];
+			$row['rbrowser'] = htmlspecialchars_decode($row['rbrowser']);
 			if ($row['ripadress'] <> '') {
 				$row['ripadress'] = $row['ripadress'];
 			} else {
@@ -571,7 +571,7 @@ class  tx_rssecuredownload_module1 extends t3lib_SCbase {
 				$row['rname'] = $lang->getLL('no-ip-logging');
 			}
 			if ($row['error'] <> 0) {
-				$row['errortext'] = sprintf($lang->getLL('error'.$row['error']), $row['errortext']);
+				$row['errortext'] = sprintf($lang->getLL('error'.$row['error']), htmlspecialchars_decode($row['errortext']));
 			}
 			$this->csvContent[] = $row;
 		}
