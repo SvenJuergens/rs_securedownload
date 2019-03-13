@@ -187,7 +187,6 @@ class Pi1Controller extends AbstractPlugin
                 break;
             case 'getCode':
                 $row = $this->getElement('', $downloadId);
-                debug( $row);
                 if (count($row) === 1) {
                     $row = $row[0];
                     $markerArray['###TITLE###'] = $row['title'];
