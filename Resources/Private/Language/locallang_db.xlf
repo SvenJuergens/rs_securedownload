@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-03-13T14:21:39Z" product-name="rs_securedownload">
+		<header/>
+		<body>
+			<trans-unit id="tx_rssecuredownload_codes" xml:space="preserve">
+				<source>Secure Download Codes</source>
+			</trans-unit>
+			<trans-unit id="tx_rssecuredownload_codes.title" xml:space="preserve">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="tx_rssecuredownload_codes.description" xml:space="preserve">
+				<source>description</source>
+			</trans-unit>
+			<trans-unit id="tx_rssecuredownload_codes.codeprompt" xml:space="preserve">
+				<source>codeprompt</source>
+			</trans-unit>
+			<trans-unit id="tx_rssecuredownload_codes.code" xml:space="preserve">
+				<source>code</source>
+			</trans-unit>
+			<trans-unit id="tx_rssecuredownload_codes.file" xml:space="preserve">
+				<source>file (max. 1)</source>
+			</trans-unit>
+			<trans-unit id="tx_rssecuredownload_codes.numberuses" xml:space="preserve">
+				<source>Number of usages</source>
+			</trans-unit>
+			<trans-unit id="tx_rssecuredownload_logs" xml:space="preserve">
+				<source>Secure Download Log</source>
+			</trans-unit>
+			<trans-unit id="tx_rssecuredownload_logs.docid" xml:space="preserve">
+				<source>document ID</source>
+			</trans-unit>
+			<trans-unit id="tx_rssecuredownload_logs.accesstime" xml:space="preserve">
+				<source>accesstime</source>
+			</trans-unit>
+			<trans-unit id="tx_rssecuredownload_logs.rbrowser" xml:space="preserve">
+				<source>Remote Browser</source>
+			</trans-unit>
+			<trans-unit id="tx_rssecuredownload_logs.ripadress" xml:space="preserve">
+				<source>Remote IP-Adress</source>
+			</trans-unit>
+			<trans-unit id="tx_rssecuredownload_logs.rname" xml:space="preserve">
+				<source>Remote Name</source>
+			</trans-unit>
+			<trans-unit id="tx_rssecuredownload_logs.error" xml:space="preserve">
+				<source>error type</source>
+			</trans-unit>
+			<trans-unit id="tx_rssecuredownload_logs.errortext" xml:space="preserve">
+				<source>error type</source>
+			</trans-unit>
+			<trans-unit id="tt_content.list_type_pi1" xml:space="preserve">
+				<source>Secure Download Form</source>
+			</trans-unit>
+			<trans-unit id="tt_content.pi_flexform.sheet_general" xml:space="preserve">
+				<source>Download selection</source>
+			</trans-unit>
+			<trans-unit id="tt_content.pi_flexform.downloadselect" xml:space="preserve">
+				<source>Download selection (max 1)</source>
+			</trans-unit>
+			<trans-unit id="tt_content.pi_flexform.tryall" xml:space="preserve">
+				<source>Try all saved codes (ignores value in Download selection)</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

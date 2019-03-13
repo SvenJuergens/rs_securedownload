@@ -1,14 +1,19 @@
 <?php
-if (!defined ('TYPO3_MODE')) 	die ('Access denied.');
+defined('TYPO3_MODE') || die();
 
-// Extending TypoScript from static template uid=43 to set up userdefined tag:
-t3lib_extMgm::addTypoScript($_EXTKEY, 'editorcfg', 
-	'tt_content.CSS_editor.ch.tx_rssecuredownload_pi1 = < plugin.tx_rssecuredownload_pi1.CSS_editor', 43);
 
-t3lib_extMgm::addPItoST43($_EXTKEY, 'pi1/class.tx_rssecuredownload_pi1.php', '_pi1', 'list_type', 0);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPItoST43(
+    'rs_securedownload',
+    'pi1/Pi1Controller.php',
+    '_pi1',
+    'list_type',
+    0
+);
 
-t3lib_extMgm::addTypoScript($_EXTKEY, 'setup', '
-	tt_content.shortcut.20.0.conf.tx_rssecuredownload_codes = < plugin.'.t3lib_extMgm::getCN($_EXTKEY).'_pi1
-	tt_content.shortcut.20.0.conf.tx_rssecuredownload_codes.CMD = singleView
-', 43);
-?>
+$overrideSetup = 'plugin.tx_rssecuredownload_pi1.userFunc = RsSoftweb\RsSecuredownload\Controller\Pi1Controller->main';
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScript(
+    'rs_securedownload',
+    'setup',
+    $overrideSetup
+);

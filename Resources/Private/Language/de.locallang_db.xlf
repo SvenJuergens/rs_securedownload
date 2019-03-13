@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2019-03-13T14:21:39Z" product-name="rs_securedownload">
+		<header/>
+		<body>
+			<trans-unit id="tx_rssecuredownload_codes" xml:space="preserve" approved="yes">
+				<source>Secure Download Codes</source>
+				<target>Sichere Download Codes</target>
+			</trans-unit>
+			<trans-unit id="tx_rssecuredownload_codes.title" xml:space="preserve" approved="yes">
+				<source>title</source>
+				<target>Titel</target>
+			</trans-unit>
+			<trans-unit id="tx_rssecuredownload_codes.description" xml:space="preserve" approved="yes">
+				<source>description</source>
+				<target>Beschreibung</target>
+			</trans-unit>
+			<trans-unit id="tx_rssecuredownload_codes.codeprompt" xml:space="preserve" approved="yes">
+				<source>codeprompt</source>
+				<target>Kennwort Frage</target>
+			</trans-unit>
+			<trans-unit id="tx_rssecuredownload_codes.code" xml:space="preserve" approved="yes">
+				<source>code</source>
+				<target>Kennwort</target>
+			</trans-unit>
+			<trans-unit id="tx_rssecuredownload_codes.file" xml:space="preserve" approved="yes">
+				<source>file (max. 1)</source>
+				<target>Datei (max. 1)</target>
+			</trans-unit>
+			<trans-unit id="tx_rssecuredownload_codes.numberuses" xml:space="preserve" approved="yes">
+				<source>Number of usages</source>
+				<target>Anzahl der Benutzungen</target>
+			</trans-unit>
+			<trans-unit id="tx_rssecuredownload_logs" xml:space="preserve" approved="yes">
+				<source>Secure Download Log</source>
+				<target>Sichere Download Logs</target>
+			</trans-unit>
+			<trans-unit id="tx_rssecuredownload_logs.docid" xml:space="preserve" approved="yes">
+				<source>document ID</source>
+				<target>Dokument ID</target>
+			</trans-unit>
+			<trans-unit id="tx_rssecuredownload_logs.accesstime" xml:space="preserve" approved="yes">
+				<source>accesstime</source>
+				<target>Zugriffszeit</target>
+			</trans-unit>
+			<trans-unit id="tx_rssecuredownload_logs.rbrowser" xml:space="preserve" approved="yes">
+				<source>Remote Browser</source>
+				<target>Benutzer Browser</target>
+			</trans-unit>
+			<trans-unit id="tx_rssecuredownload_logs.ripadress" xml:space="preserve" approved="yes">
+				<source>Remote IP-Adress</source>
+				<target>Benutzer IP Aresse</target>
+			</trans-unit>
+			<trans-unit id="tx_rssecuredownload_logs.rname" xml:space="preserve" approved="yes">
+				<source>Remote Name</source>
+				<target>Benutzer Name</target>
+			</trans-unit>
+			<trans-unit id="tx_rssecuredownload_logs.error" xml:space="preserve" approved="yes">
+				<source>error type</source>
+				<target>Fehlertyp</target>
+			</trans-unit>
+			<trans-unit id="tx_rssecuredownload_logs.errortext" xml:space="preserve" approved="yes">
+				<source>error type</source>
+				<target>Fehlertext</target>
+			</trans-unit>
+			<trans-unit id="tt_content.list_type_pi1" xml:space="preserve" approved="yes">
+				<source>Secure Download Form</source>
+				<target>Sicheres Download Formular</target>
+			</trans-unit>
+			<trans-unit id="tt_content.pi_flexform.sheet_general" xml:space="preserve" approved="yes">
+				<source>Download selection</source>
+				<target>Download Auswahl</target>
+			</trans-unit>
+			<trans-unit id="tt_content.pi_flexform.downloadselect" xml:space="preserve" approved="yes">
+				<source>Download selection (max 1)</source>
+				<target>Download Auswahl (max. 1)</target>
+			</trans-unit>
+			<trans-unit id="tt_content.pi_flexform.tryall" xml:space="preserve" approved="yes">
+				<source>Try all saved codes (ignores value in Download selection)</source>
+				<target>Teste alle gespeicherten Kennwörter (keine Beachtung von Download Auswahl)</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

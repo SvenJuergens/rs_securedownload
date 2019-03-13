@@ -1,0 +1,3 @@
+plugin.tx_rssecuredownload_pi1 {
+	templateFile = EXT:rs_securedownload/Resources/Private/Templates/template.html
+}

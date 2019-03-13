@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-03-13T14:21:24Z" product-name="rs_securedownload">
+		<header/>
+		<body>
+			<trans-unit id="pi1_title" xml:space="preserve">
+				<source>Secure Download Form</source>
+			</trans-unit>
+			<trans-unit id="pi1_plus_wiz_description" xml:space="preserve">
+				<source>Create secure download</source>
+			</trans-unit>
+			<trans-unit id="titleall" xml:space="preserve">
+				<source>All downloads</source>
+			</trans-unit>
+			<trans-unit id="error1" xml:space="preserve">
+				<source>(This code doesn't exist: &quot;%s&quot;)</source>
+			</trans-unit>
+			<trans-unit id="error2" xml:space="preserve">
+				<source>(This code is expired or not valid yet)</source>
+			</trans-unit>
+			<trans-unit id="error3" xml:space="preserve">
+				<source>(This code is deactivated)</source>
+			</trans-unit>
+			<trans-unit id="send_download" xml:space="preserve">
+				<source>Download</source>
+			</trans-unit>
+			<trans-unit id="start_download" xml:space="preserve">
+				<source>click here to start the download</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
