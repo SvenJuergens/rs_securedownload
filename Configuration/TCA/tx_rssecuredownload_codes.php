@@ -95,18 +95,11 @@ return [
         'file' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:rs_securedownload/Resources/Private/Language/locallang_db.xlf:tx_rssecuredownload_codes.file',
-            'config' => [
-                'type' => 'group',
-                'internal_type' => 'file',
-                'allowed' => '',
-                'disallowed' => 'php,php3',
-                'max_size' => 100000,
-                'uploadfolder' => 'uploads/tx_rssecuredownload',
-                'show_thumbs' => 1,
-                'size' => 2,
-                'minitems' => 0,
-                'maxitems' => 1,
-            ]
+            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig('file', [
+                'appearance' => [
+                    'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:media.addFileReference'
+                ],
+            ])
         ],
     ],
     'types' => [

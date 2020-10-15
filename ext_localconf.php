@@ -17,3 +17,6 @@ $overrideSetup = 'plugin.tx_rssecuredownload_pi1.userFunc = RsSoftweb\RsSecuredo
     'setup',
     $overrideSetup
 );
+
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['rssecuredownloadEleemnts']
+    = \RsSoftweb\RsSecuredownload\Updates\FalUpdateWizard::class;

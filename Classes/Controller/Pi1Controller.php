@@ -11,6 +11,7 @@ namespace RsSoftweb\RsSecuredownload\Controller;
 use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
+use TYPO3\CMS\Core\Resource\FileRepository;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Frontend\Plugin\AbstractPlugin;
 use TYPO3\CMS\Frontend\Resource\FilePathSanitizer;
@@ -133,7 +134,7 @@ class Pi1Controller extends AbstractPlugin
                             $this->templateService->substituteMarker(
                                 $t['download'],
                                 '###DOWNLOAD###',
-                                '<a href="rssecuredownload.php">' . $this->pi_getLL('start_download') . '</a>'
+                                '<a href="/rssecuredownload.php">' . $this->pi_getLL('start_download') . '</a>'
                             );
                     } else {
                         $subpartArray['###SUB_DOWNLOAD###'] =
@@ -144,10 +145,14 @@ class Pi1Controller extends AbstractPlugin
                             );
                     }
 
+                    /** @var FileRepository $fileRepository */
+                    $fileRepository = GeneralUtility::makeInstance(FileRepository::class);
+                    $file = $fileRepository->findByRelation('tx_rssecuredownload_codes', 'file', $codeElement['uid']);
+
                     //set data in session for download.php
                     session_start();
-                    $_SESSION[$this->prefixId]['file'] = $pathUploads . $codeElement['file'];
-                    $_SESSION[$this->prefixId]['title'] = $codeElement['file'];
+                    $_SESSION[$this->prefixId]['file'] = $file[0]->getOriginalFile()->getPublicUrl();
+                    $_SESSION[$this->prefixId]['title'] = $file[0]->getOriginalFile()->getName();
                     break;
 
                 }
@@ -180,7 +185,7 @@ class Pi1Controller extends AbstractPlugin
                         $markerTemp['###FORM_FIELDS###'] = '<input type="hidden" name="tx_rssecuredownload_pi1[action]" value="checkCode" />';
                         $markerTemp['###FORM_FIELDS###'] .= '<input type="hidden" name="tx_rssecuredownload_pi1[download]" value="' . (int)$downloadId . '" />';
                         $markerTemp['###FORM_FIELDS###'] .= '<input type="hidden" name="tx_rssecuredownload_pi1[senderuid]" value="' . (int)$uid . '" />';
-                        $markerTemp['###FORM_FIELDS###'] .= '<input type="text" name="tx_rssecuredownload_pi1[code]" value="' . htmlspecialchars($row['codeprompt']) . '" />&nbsp;&nbsp;';
+                        $markerTemp['###FORM_FIELDS###'] .= '<input type="text" required name="tx_rssecuredownload_pi1[code]" value="' . htmlspecialchars($row['codeprompt']) . '" />&nbsp;&nbsp;';
                         $markerTemp['###FORM_FIELDS###'] .= '<input type="submit" value="' . $this->pi_getLL('send_download') . '" />';
                         $subpartArray['###SUB_FORM###'] = $this->templateService->substituteMarkerArray(
                             $t['form'],
