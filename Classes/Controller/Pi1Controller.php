@@ -13,6 +13,7 @@ use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Frontend\Plugin\AbstractPlugin;
+use TYPO3\CMS\Frontend\Resource\FilePathSanitizer;
 
 /**
  * Plugin 'Secure Download' for the 'rs_securedownload' extension.
@@ -60,10 +61,14 @@ class Pi1Controller extends AbstractPlugin
         $downloadId = $this->pi_getFFvalue($this->cObj->data['pi_flexform'], 'downloadselect', 'general');
 
         //get the HTML template:
-        $path = $GLOBALS['TSFE']->tmpl->getFileName(
-            $this->conf['templateFile']
-        );
-        if ($path !== null && file_exists($path)) {
+        try {
+            $path = GeneralUtility::makeInstance(FilePathSanitizer::class)
+                ->sanitize($this->conf['templateFile']);
+        } catch (\Exception $e) {
+            $path = null;
+        }
+
+        if ($path !== null) {
             $this->templateCode = file_get_contents($path);
         }
 
@@ -97,7 +102,7 @@ class Pi1Controller extends AbstractPlugin
                     break;
                 }
 
-                if (($tryAll === true) && ($this->piVars['download'] == 0)) {
+                if (($tryAll === true) && ((int)$this->piVars['download'] === 0)) {
                     $codeElement = $this->getElement($givenCode);
                 } else {
                     $codeElement = $this->getElement($givenCode, $downloadId);
@@ -145,11 +150,10 @@ class Pi1Controller extends AbstractPlugin
                     $_SESSION[$this->prefixId]['title'] = $codeElement['file'];
                     break;
 
-                } else {
-
-                    $markerTemp['###ERROR###'] = sprintf($this->pi_getLL('error1'), $givenCode);
-                    $markerTemp['###ERROR_NR###'] = 1;
                 }
+
+                $markerTemp['###ERROR###'] = sprintf($this->pi_getLL('error1'), $givenCode);
+                $markerTemp['###ERROR_NR###'] = 1;
 
                 $subpartArray['###SUB_ERROR###'] = $this->templateService->substituteMarkerArray(
                     $t['error'],
