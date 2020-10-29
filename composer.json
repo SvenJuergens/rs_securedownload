@@ -1,0 +1,24 @@
+{
+  "name": "svenjuergens/rs-securedownload",
+  "type": "typo3-cms-extension",
+  "description": "Display Downloads only with correct code",
+  "authors": [
+    {
+      "name": "Rene, Sven Jürgens"
+    }
+  ],
+  "license": ["GPL-2.0-or-later"],
+  "require": {
+    "typo3/cms-core": ">=9.5.18 || ^10.4.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "RsSoftweb\\RsSecuredownload\\": "Classes"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "extension-key": "rs_securedownload"
+    }
+  }
+}
