@@ -8,11 +8,12 @@ namespace RsSoftweb\RsSecuredownload\Controller;
  * LICENSE.txt file that was distributed with this source code.
  */
 
-use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Core\Resource\FileRepository;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Utility\PathUtility;
 use TYPO3\CMS\Frontend\Plugin\AbstractPlugin;
 use TYPO3\CMS\Frontend\Resource\FilePathSanitizer;
 
@@ -53,9 +54,7 @@ class Pi1Controller extends AbstractPlugin
         $pid = $this->cObj->data['pid'];
         $uid = $this->cObj->data['uid'];
 
-
-        $pathUploads = Environment::getPublicPath() . '/uploads/tx_rssecuredownload/';
-        $pluginPath = Environment::getExtensionsPath() . '/' . $this->extKey;
+        $pluginPath = PathUtility::stripPathSitePrefix(ExtensionManagementUtility::extPath($this->extKey));
 
         //get data from flexform
         $tryAll = (bool)$this->pi_getFFvalue($this->cObj->data['pi_flexform'], 'tryall', 'general');
