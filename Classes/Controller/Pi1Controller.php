@@ -213,7 +213,7 @@ class Pi1Controller extends AbstractPlugin
                         $markerTemp['###FORM_FIELDS###'] = '<input type="hidden" name="tx_rssecuredownload_pi1[action]" value="checkCode" />';
                         $markerTemp['###FORM_FIELDS###'] .= '<input type="hidden" name="tx_rssecuredownload_pi1[download]" value="' . (int)$downloadId . '" />';
                         $markerTemp['###FORM_FIELDS###'] .= '<input type="hidden" name="tx_rssecuredownload_pi1[senderuid]" value="' . (int)$uid . '" />';
-                        $markerTemp['###FORM_FIELDS###'] .= '<input type="text" name="tx_rssecuredownload_pi1[code]" value="' . htmlspecialchars($row['codeprompt']) . '" />&nbsp;&nbsp;';
+                        $markerTemp['###FORM_FIELDS###'] .= '<input type="text" required name="tx_rssecuredownload_pi1[code]" value="' . htmlspecialchars($row['codeprompt']) . '" />&nbsp;&nbsp;';
                         $markerTemp['###FORM_FIELDS###'] .= '<input type="submit" value="' . $this->pi_getLL('send_download') . '" />';
                         $subpartArray['###SUB_FORM###'] = $this->templateService->substituteMarkerArray(
                             $t['form'],
