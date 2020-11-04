@@ -8,6 +8,7 @@ namespace RsSoftweb\RsSecuredownload\Controller;
  * LICENSE.txt file that was distributed with this source code.
  */
 
+use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Core\Resource\FileRepository;
@@ -150,7 +151,7 @@ class Pi1Controller extends AbstractPlugin
 
                     //set data in session for download.php
                     session_start();
-                    $_SESSION[$this->prefixId]['file'] = $file[0]->getOriginalFile()->getPublicUrl();
+                    $_SESSION[$this->prefixId]['file'] = Environment::getPublicPath() . '/' . $file[0]->getOriginalFile()->getPublicUrl();
                     $_SESSION[$this->prefixId]['title'] = $file[0]->getOriginalFile()->getName();
                     break;
 
